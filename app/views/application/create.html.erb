@@ -1,0 +1,18 @@
+<h1>Params submitted</h1>
+
+<table class="params">
+  <% params.each do |key, value| %>
+    <%= content_tag(:tr, :class => %w[q a q1 q2 q3 a1 a2 a3].include?(key) ? :important : nil) do %>
+      <td>
+        <%= key %>
+      </td>
+      <td>
+        <code><%= value %></code>
+      </td>
+    <% end %>
+  <% end %>
+</table>
+
+<hr />
+
+<%= render(:partial => 'form') %>

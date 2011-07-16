@@ -1,0 +1,87 @@
+<h1>Broken</h1>
+
+<p>
+All questions fields are named <code>q</code>, all answers <code>a</code>. You end up with only 2 unique fields, and browsers will only submit the last fields defined. <strong>You and your users will lose data</strong> - just hit submit to see it.
+</p>
+
+<%= form_tag(submit_path) do %>
+  <table>
+    <tr>
+      <td>
+        <%= text_field_tag(:q, 'Question 1') %>
+      </td>
+      <td>
+        <%= text_field_tag(:a, 'Answer 1') %>
+      </td>
+      <td>
+        <%= submit_tag('Submit') %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= text_field_tag(:q, 'Question 2') %>
+      </td>
+      <td>
+        <%= text_field_tag(:a, 'Answer 2') %>
+      </td>
+      <td>
+        <%= submit_tag('Submit') %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= text_field_tag(:q, 'Question 3') %>
+      </td>
+      <td>
+        <%= text_field_tag(:a, 'Answer 3') %>
+      </td>
+      <td>
+        <%= submit_tag('Submit') %>
+      </td>
+    </tr>
+  </table>
+<% end %>
+
+<hr />
+
+<h1>Fixed</h1>
+
+<p>Question fields are named <code>q1</code> to <code>q3</code>, answers <code>a1</code> to <code>a3</code>. So you end up with 6 unique fields, which then are properly submitted.</p>
+
+<%= form_tag(submit_path) do %>
+  <table>
+    <tr>
+      <td>
+        <%= text_field_tag(:q1, 'Question 1') %>
+      </td>
+      <td>
+        <%= text_field_tag(:a1, 'Answer 1') %>
+      </td>
+      <td>
+        <%= submit_tag('Submit') %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= text_field_tag(:q2, 'Question 2') %>
+      </td>
+      <td>
+        <%= text_field_tag(:a2, 'Answer 2') %>
+      </td>
+      <td>
+        <%= submit_tag('Submit') %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= text_field_tag(:q3, 'Question 3') %>
+      </td>
+      <td>
+        <%= text_field_tag(:a3, 'Answer 3') %>
+      </td>
+      <td>
+        <%= submit_tag('Submit') %>
+      </td>
+    </tr>
+  </table>
+<% end %>
