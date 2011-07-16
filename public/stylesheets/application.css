@@ -28,3 +28,9 @@ table.params tr td {
 table.params tr.important td {
   color: black;
 }
+
+footer {
+  margin: 2em 0em 0em 0em;
+  font-size: 11px;
+  text-align: center;
+}
